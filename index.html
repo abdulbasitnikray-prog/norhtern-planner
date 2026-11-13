@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Northern Areas Itinerary Planner</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#planner">Skip to planner</a>
+<header>
+  <h1>Northern Areas Itinerary Planner</h1>
+  <p>Plan a trip from Islamabad to Pakistan's northern valleys: pick places, check season and time conflicts, and see your cost.</p>
+  <nav aria-label="Sections"><a href="#details">1. Trip details</a> <a href="#explore">2. Explore</a> <a href="#itinerary">3. Itinerary</a></nav>
+</header>
+<main>
+  <section id="details" aria-labelledby="h-details">
+    <h2 id="h-details">1. Your trip details</h2>
+    <form id="tripForm" novalidate>
+      <div class="field"><label for="name">Traveller name</label>
+        <input id="name" name="name" type="text" required minlength="2" autocomplete="name"></div>
+      <div class="field"><label for="email">Email</label>
+        <input id="email" name="email" type="email" required autocomplete="email"></div>
+      <div class="field"><label for="start">Start date</label>
+        <input id="start" name="start" type="date" required></div>
+      <div class="field"><label for="days">Trip length (days, 2-14)</label>
+        <input id="days" name="days" type="number" min="2" max="14" value="7" required></div>
+      <div class="field"><label for="people">Travellers (1-12)</label>
+        <input id="people" name="people" type="number" min="1" max="12" value="2" required></div>
+      <div class="field"><label for="budget">Total budget (PKR)</label>
+        <input id="budget" name="budget" type="number" min="10000" step="1000" value="150000" required></div>
+      <button type="submit">Save trip details</button>
+      <p id="formMsg" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <section id="explore" aria-labelledby="h-explore">
+    <h2 id="h-explore">2. Explore destinations</h2>
+    <div class="filters">
+      <div class="field"><label for="search">Search by name</label><input id="search" type="search" placeholder="e.g. Hunza"></div>
+      <div class="field"><label for="region">Region</label>
+        <select id="region"><option value="all">All regions</option><option>Gilgit-Baltistan</option><option>Khyber Pakhtunkhwa</option></select></div>
+      <div class="field"><label for="maxCost">Max cost per person per day: <output id="costOut">15000</output> PKR</label>
+        <input id="maxCost" type="range" min="6000" max="15000" step="500" value="15000"></div>
+      <div class="field check"><input id="openOnly" type="checkbox"><label for="openOnly">Only places open in my travel month</label></div>
+    </div>
+    <p id="count" role="status" aria-live="polite"></p>
+    <ul id="cards" class="cards"></ul>
+  </section>
+
+  <section id="itinerary" aria-labelledby="h-it">
+    <h2 id="h-it">3. Your itinerary</h2>
+    <p id="empty">No stops yet. Add destinations from the list above.</p>
+    <ol id="stops"></ol>
+    <div id="summary" hidden>
+      <h3>Trip summary</h3>
+      <dl>
+        <dt>Days needed</dt><dd id="sNeed"></dd>
+        <dt>Estimated cost</dt><dd id="sCost"></dd>
+        <dt>Driving from Islamabad</dt><dd id="sDrive"></dd>
+      </dl>
+      <ul id="alerts" aria-live="polite"></ul>
+      <button type="button" id="clear" class="secondary">Clear itinerary</button>
+    </div>
+  </section>
+</main>
+<footer><p>Sample data is approximate and for coursework only. Check road and weather advisories before travelling.</p></footer>
+<script src="app.js"></script>
+</body>
+</html>
