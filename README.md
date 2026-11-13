@@ -15,9 +15,3 @@ Live URL (GitHub Pages): _[add after enabling Pages]_
 
 ## Files
 `index.html` structure and form · `styles.css` layout, 600px/960px breakpoints · `app.js` logic · `docs/design-note.md` wireframe and design note
-
-## Screenshots
-_[add mobile, tablet, desktop screenshots in /docs/screenshots and link here]_
-
-## AI assistance and attribution
-_[Disclose honestly: e.g. "Claude (Anthropic) generated the initial structure; I reviewed, tested and modified it."]_ No external libraries, templates or images are used. Destination data is approximate and written for this coursework.
